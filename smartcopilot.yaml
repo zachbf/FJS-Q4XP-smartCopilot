@@ -17,75 +17,717 @@ blocks:
   - name: MAIN TRIGGERS
     type: trigger
     entries:
-      #- ref: sim/physics/metric_press
-      #- ref: sim/cockpit2/fuel/fuel_tank_pump_on
-      #  idx: 0
+      - ref: FJS/Q4XP/Manips/Roll_Disengage_Ctl
+      - ref: FJS/Q4XP/Manips/Pitch_Disengage_Ctl
+      - ref: FJS/Q4XP/Ext/show_gpu
+      - ref: FJS/Q4XP/Manips/CockpitDoor_Ctl
       
   - name: FAILURES
     option: Failures
     type: trigger
     entries:
-      #- ref: sim/flightmodel/failures/aoa_ice
+      #- ref: somethiong
   - name: TRANSPONDER DR
     type: trigger
     option: Transponder
     entries:
       - ref: sim/cockpit/radios/transponder_mode
+      - ref: sim/cockpit/radios/transponder_code
+      - ref: sim/cockpit/radios/transponder_id
   - name: RADIO DR
     type: trigger
     option: Radio
     entries:
-      #- ref: sim/cockpit2/radios/actuators/audio_com_selection
+      - ref: sim/cockpit2/radios/actuators/com1_frequency_hz
+      - ref: sim/cockpit2/radios/actuators/com1_frequency_hz_833
+      - ref: sim/cockpit2/radios/actuators/com1_frequency_khz
+      - ref: sim/cockpit2/radios/actuators/com1_frequency_Mhz
+      - ref: sim/cockpit2/radios/actuators/com1_standby_frequency_hz
+      - ref: sim/cockpit2/radios/actuators/com1_standby_frequency_hz_833
+      - ref: sim/cockpit2/radios/actuators/com1_standby_frequency_khz
+      - ref: sim/cockpit2/radios/actuators/com1_standby_frequency_Mhz
+      - ref: sim/cockpit2/radios/actuators/com2_frequency_hz
+      - ref: sim/cockpit2/radios/actuators/com2_frequency_hz_833
+      - ref: sim/cockpit2/radios/actuators/com2_frequency_khz
+      - ref: sim/cockpit2/radios/actuators/com2_frequency_Mhz
+      - ref: sim/cockpit2/radios/actuators/com2_standby_frequency_hz
+      - ref: sim/cockpit2/radios/actuators/com2_standby_frequency_hz_833
+      - ref: sim/cockpit2/radios/actuators/com2_standby_frequency_khz
+      - ref: sim/cockpit2/radios/actuators/com2_standby_frequency_Mhz
+      - ref: sim/cockpit2/radios/actuators/nav1_frequency_hz
+      - ref: sim/cockpit2/radios/actuators/nav1_frequency_khz
+      - ref: sim/cockpit2/radios/actuators/nav1_frequency_Mhz
+      - ref: sim/cockpit2/radios/actuators/nav1_standby_frequency_hz
+      - ref: sim/cockpit2/radios/actuators/nav1_standby_frequency_khz
+      - ref: sim/cockpit2/radios/actuators/nav1_standby_frequency_Mhz
+      - ref: sim/cockpit2/radios/actuators/nav2_frequency_hz
+      - ref: sim/cockpit2/radios/actuators/nav2_frequency_khz
+      - ref: sim/cockpit2/radios/actuators/nav2_frequency_Mhz
+      - ref: sim/cockpit2/radios/actuators/nav2_standby_frequency_hz
+      - ref: sim/cockpit2/radios/actuators/nav2_standby_frequency_khz
+      - ref: sim/cockpit2/radios/actuators/nav2_standby_frequency_Mhz
+      - ref: sim/cockpit2/radios/actuators/adf1_frequency_hz
+      - ref: sim/cockpit2/radios/actuators/adf1_standby_frequency_hz
+      - ref: sim/cockpit2/radios/actuators/adf2_frequency_hz
+      - ref: sim/cockpit2/radios/actuators/adf2_standby_frequency_hz
   - name: MAIN COMMANDS
     type: command
     entries:
-      #- ref: sim/GPS/g430n1_cdi
+      #FMS1
+      - ref: FJS/Q4XP/fms1/data
+      - ref: FJS/Q4XP/fms1/dt
+      - ref: FJS/Q4XP/fms1/fpl
+      - ref: FJS/Q4XP/fms1/fuel
+      - ref: FJS/Q4XP/fms1/menu
+      - ref: FJS/Q4XP/fms1/msg
+      - ref: FJS/Q4XP/fms1/nav
+      - ref: FJS/Q4XP/fms1/next
+      - ref: FJS/Q4XP/fms1/perf
+      - ref: FJS/Q4XP/fms1/plus_minus
+      - ref: FJS/Q4XP/fms1/prev
+      - ref: FJS/Q4XP/fms1/pwr
+      - ref: FJS/Q4XP/fms1/tune
+      - ref: FJS/Q4XP/fms1/vnav
+      - ref: FJS/Q4XP/fms1/key_0
+      - ref: FJS/Q4XP/fms1/key_1
+      - ref: FJS/Q4XP/fms1/key_2
+      - ref: FJS/Q4XP/fms1/key_3
+      - ref: FJS/Q4XP/fms1/key_4
+      - ref: FJS/Q4XP/fms1/key_5
+      - ref: FJS/Q4XP/fms1/key_6
+      - ref: FJS/Q4XP/fms1/key_7
+      - ref: FJS/Q4XP/fms1/key_8
+      - ref: FJS/Q4XP/fms1/key_9
+      - ref: FJS/Q4XP/fms1/key_A
+      - ref: FJS/Q4XP/fms1/key_B
+      - ref: FJS/Q4XP/fms1/key_C
+      - ref: FJS/Q4XP/fms1/key_D
+      - ref: FJS/Q4XP/fms1/key_E
+      - ref: FJS/Q4XP/fms1/key_F
+      - ref: FJS/Q4XP/fms1/key_G
+      - ref: FJS/Q4XP/fms1/key_H
+      - ref: FJS/Q4XP/fms1/key_I
+      - ref: FJS/Q4XP/fms1/key_J
+      - ref: FJS/Q4XP/fms1/key_K
+      - ref: FJS/Q4XP/fms1/key_L
+      - ref: FJS/Q4XP/fms1/key_M
+      - ref: FJS/Q4XP/fms1/key_N
+      - ref: FJS/Q4XP/fms1/key_O
+      - ref: FJS/Q4XP/fms1/key_P
+      - ref: FJS/Q4XP/fms1/key_Q
+      - ref: FJS/Q4XP/fms1/key_R
+      - ref: FJS/Q4XP/fms1/key_S
+      - ref: FJS/Q4XP/fms1/key_T
+      - ref: FJS/Q4XP/fms1/key_U
+      - ref: FJS/Q4XP/fms1/key_V
+      - ref: FJS/Q4XP/fms1/key_W
+      - ref: FJS/Q4XP/fms1/key_X
+      - ref: FJS/Q4XP/fms1/key_Y
+      - ref: FJS/Q4XP/fms1/key_Z
+      - ref: FJS/Q4XP/fms1/key_back
+      - ref: FJS/Q4XP/fms1/key_enter
+      - ref: FJS/Q4XP/fms1/list
+      - ref: FJS/Q4XP/fms1/lsk_l1
+      - ref: FJS/Q4XP/fms1/lsk_l2
+      - ref: FJS/Q4XP/fms1/lsk_l3
+      - ref: FJS/Q4XP/fms1/lsk_l4
+      - ref: FJS/Q4XP/fms1/lsk_l5
+      - ref: FJS/Q4XP/fms1/lsk_r1
+      - ref: FJS/Q4XP/fms1/lsk_r2
+      - ref: FJS/Q4XP/fms1/lsk_r3
+      - ref: FJS/Q4XP/fms1/lsk_r4
+      - ref: FJS/Q4XP/fms1/lsk_r5
+      #FMS2
+      - ref: FJS/Q4XP/fms2/data
+      - ref: FJS/Q4XP/fms2/dt
+      - ref: FJS/Q4XP/fms2/fpl
+      - ref: FJS/Q4XP/fms2/fuel
+      - ref: FJS/Q4XP/fms2/menu
+      - ref: FJS/Q4XP/fms2/msg
+      - ref: FJS/Q4XP/fms2/nav
+      - ref: FJS/Q4XP/fms2/next
+      - ref: FJS/Q4XP/fms2/perf
+      - ref: FJS/Q4XP/fms2/plus_minus
+      - ref: FJS/Q4XP/fms2/prev
+      - ref: FJS/Q4XP/fms2/pwr
+      - ref: FJS/Q4XP/fms2/tune
+      - ref: FJS/Q4XP/fms2/vnav
+      - ref: FJS/Q4XP/fms2/key_0
+      - ref: FJS/Q4XP/fms2/key_1
+      - ref: FJS/Q4XP/fms2/key_2
+      - ref: FJS/Q4XP/fms2/key_3
+      - ref: FJS/Q4XP/fms2/key_4
+      - ref: FJS/Q4XP/fms2/key_5
+      - ref: FJS/Q4XP/fms2/key_6
+      - ref: FJS/Q4XP/fms2/key_7
+      - ref: FJS/Q4XP/fms2/key_8
+      - ref: FJS/Q4XP/fms2/key_9
+      - ref: FJS/Q4XP/fms2/key_A
+      - ref: FJS/Q4XP/fms2/key_B
+      - ref: FJS/Q4XP/fms2/key_C
+      - ref: FJS/Q4XP/fms2/key_D
+      - ref: FJS/Q4XP/fms2/key_E
+      - ref: FJS/Q4XP/fms2/key_F
+      - ref: FJS/Q4XP/fms2/key_G
+      - ref: FJS/Q4XP/fms2/key_H
+      - ref: FJS/Q4XP/fms2/key_I
+      - ref: FJS/Q4XP/fms2/key_J
+      - ref: FJS/Q4XP/fms2/key_K
+      - ref: FJS/Q4XP/fms2/key_L
+      - ref: FJS/Q4XP/fms2/key_M
+      - ref: FJS/Q4XP/fms2/key_N
+      - ref: FJS/Q4XP/fms2/key_O
+      - ref: FJS/Q4XP/fms2/key_P
+      - ref: FJS/Q4XP/fms2/key_Q
+      - ref: FJS/Q4XP/fms2/key_R
+      - ref: FJS/Q4XP/fms2/key_S
+      - ref: FJS/Q4XP/fms2/key_T
+      - ref: FJS/Q4XP/fms2/key_U
+      - ref: FJS/Q4XP/fms2/key_V
+      - ref: FJS/Q4XP/fms2/key_W
+      - ref: FJS/Q4XP/fms2/key_X
+      - ref: FJS/Q4XP/fms2/key_Y
+      - ref: FJS/Q4XP/fms2/key_Z
+      - ref: FJS/Q4XP/fms2/key_back
+      - ref: FJS/Q4XP/fms2/key_enter
+      - ref: FJS/Q4XP/fms2/list
+      - ref: FJS/Q4XP/fms2/lsk_l1
+      - ref: FJS/Q4XP/fms2/lsk_l2
+      - ref: FJS/Q4XP/fms2/lsk_l3
+      - ref: FJS/Q4XP/fms2/lsk_l4
+      - ref: FJS/Q4XP/fms2/lsk_l5
+      - ref: FJS/Q4XP/fms2/lsk_r1
+      - ref: FJS/Q4XP/fms2/lsk_r2
+      - ref: FJS/Q4XP/fms2/lsk_r3
+      - ref: FJS/Q4XP/fms2/lsk_r4
+      - ref: FJS/Q4XP/fms2/lsk_r5
+      #ISI
+      - ref: FJS/Q4XP/SoftKey/isi_up
+      - ref: FJS/Q4XP/SoftKey/isi_dn
+      - ref: FJS/Q4XP/SoftKey/isi_std
+      - ref: FJS/Q4XP/SoftKey/isi_cage
+      - ref: sim/instruments/barometer_stby_down
+      - ref: sim/instruments/barometer_stby_up
+      #CPT Side Panel
+      - ref: FJS/Q4XP/Button/alternate_wiper
+      - ref: FJS/Q4XP/Switches/cir_bkr_light_l
+      - ref: FJS/Q4XP/Switches/to_warn_test
+      - ref: FJS/Q4XP/small_Button/ws_wiper_ice_detect
+      - ref: FJS/Q4XP/Switches/adc_test_dn
+      - ref: FJS/Q4XP/Switches/adc_test_up
+      - ref: FJS/Q4XP/Switches/stall_warn_test_dn
+      - ref: FJS/Q4XP/Switches/stall_warn_test_up
+      - ref: FJS/Q4XP/Switches/steering
+      - ref: FJS/Q4XP/RheoKnobs/lit_pilots_flt_pnl_dn
+      - ref: FJS/Q4XP/RheoKnobs/lit_pilots_flt_pnl_up
+      - ref: FJS/Q4XP/Switches/prop_os_gov_test
+      - ref: FJS/Q4XP/Guards/pitot_static_iso_vlv
+      - ref: FJS/Q4XP/Guards/pitot_static_iso_vlv
+      #CPT Clock
+      - ref: FJS/Q4XP/SoftKey/clock_chr_pilot
+      - ref: FJS/Q4XP/SoftKey/clock_et_pilot
+      - ref: FJS/Q4XP/Knobs/clock_funSel_pilot_dn
+      - ref: FJS/Q4XP/Knobs/clock_funSel_pilot_up
+      #Glareshield
+      - ref: FJS/Q4XP/SoftKey/eng_fire_reset_pilot
+      - ref: FJS/Q4XP/Switches/flight_taxi
+      - ref: FJS/Q4XP/Button/stickpushershut_off_pilot
+      - ref: FJS/Q4XP/Button/elevTrim_off_pilot
+      - ref: FJS/Q4XP/Button/gpws_test_pilot
+      - ref: FJS/Q4XP/Button/below_gs_pilot
+      - ref: FJS/Q4XP/Button/terrInhib_pilot
+      - ref: FJS/Q4XP/Button/ap_disconnect_pilot
+      - ref: FJS/Q4XP/SoftKey/warning_reset
+      - ref: FJS/Q4XP/Button/rud_1_pushoff
+      - ref: FJS/Q4XP/Button/splr_1_pushoff
+      - ref: FJS/Q4XP/Button/splr_2_pushoff
+      - ref: FJS/Q4XP/Button/rud_2_pushoff
+      - ref: FJS/Q4XP/SoftKey/caution_reset
+      - ref: FJS/Q4XP/Button/ap_disconnect_copilot
+      - ref: FJS/Q4XP/Button/gpws_test_copilot
+      - ref: FJS/Q4XP/Button/below_gs_copilot
+      - ref: FJS/Q4XP/Button/terrInhib_copilot
+      - ref: FJS/Q4XP/Button/stickpushershut_off_copilot
+      - ref: FJS/Q4XP/Button/elevTrim_off_copilot
+      - ref: FJS/Q4XP/SoftKey/eng_fire_reset_copilot
+      - ref: FJS/Q4XP/Switches/anti_skid_dn
+      - ref: FJS/Q4XP/Switches/anti_skid_up
+      #AFCS Buttons
+      - ref: FJS/Q4XP/Autopilot/WheelDN
+      - ref: FJS/Q4XP/Autopilot/WheelUP
+      - ref: FJS/Q4XP/SoftKey/ap_alt
+      - ref: FJS/Q4XP/SoftKey/ap_altsel
+      - ref: FJS/Q4XP/SoftKey/ap_ap
+      - ref: FJS/Q4XP/SoftKey/ap_appr
+      - ref: FJS/Q4XP/SoftKey/ap_bc
+      - ref: FJS/Q4XP/SoftKey/ap_hdg
+      - ref: FJS/Q4XP/SoftKey/ap_hsisel
+      - ref: FJS/Q4XP/SoftKey/ap_nav
+      - ref: FJS/Q4XP/SoftKey/ap_stby
+      - ref: FJS/Q4XP/SoftKey/ap_vnav
+      - ref: FJS/Q4XP/SoftKey/ap_vs
+      - ref: FJS/Q4XP/SoftKey/ap_yd
+      - ref: FJS/Q4XP/SoftKey/ap_ias
+      - ref: sim/autopilot/heading_down
+      - ref: sim/autopilot/heading_up
+      - ref: sim/autopilot/heading_copilot_down
+      - ref: sim/autopilot/heading_copilot_up
+      - ref: sim/radios/obs_HSI_up
+      - ref: sim/radios/obs_HSI_down
+      - ref: sim/radios/copilot_obs_HSI_down
+      - ref: sim/radios/copilot_obs_HSI_up
+      - ref: FJS/Q4XP/Autopilot/hsi_select_up
+      - ref: FJS/Q4XP/Autopilot/hsi_select_down
+      - ref: FJS/Q4XP/Autopilot/hsi_select_copilot_down
+      - ref: FJS/Q4XP/Autopilot/hsi_select_copilot_up
+      - ref: sim/autopilot/altitude_down
+      - ref: sim/autopilot/altitude_up
+      #FO Clock
+      - ref: FJS/Q4XP/SoftKey/clock_chr_copilot
+      - ref: FJS/Q4XP/SoftKey/clock_et_copilot
+      - ref: FJS/Q4XP/Knobs/clock_funSel_copilot_up
+      - ref: FJS/Q4XP/Knobs/clock_funSel_copilot_dn
+      #FO Side Panel
+      - ref: FJS/Q4XP/small_Button/ws_wiper_ice_detect2
+      - ref: FJS/Q4XP/RheoKnobs/lit_copilots_flt_pnl_dn
+      - ref: FJS/Q4XP/RheoKnobs/lit_copilots_flt_pnl_up
+      - ref: FJS/Q4XP/Switches/cir_bkr_light_r
+      - ref: FJS/Q4XP/Guards/fwd_outflow_valve
+      - ref: FJS/Q4XP/Knobs/fwd_outflow_valve_dn
+      - ref: FJS/Q4XP/Knobs/fwd_outflow_valve_up
+      #CPT AHRS
+      - ref: FJS/Q4XP/SoftKey/ahrs_1_dg_slew_dn
+      - ref: FJS/Q4XP/SoftKey/ahrs_1_dg_slew_up
+      - ref: FJS/Q4XP/SoftKey/ahrs_1_dg
+      - ref: FJS/Q4XP/SoftKey/ahrs_1_align
+      #FO AHRS
+      - ref: FJS/Q4XP/SoftKey/ahrs_2_dg_slew_dn
+      - ref: FJS/Q4XP/SoftKey/ahrs_2_dg_slew_up
+      - ref: FJS/Q4XP/SoftKey/ahrs_2_dg
+      - ref: FJS/Q4XP/SoftKey/ahrs_2_align
+      #CPT MFD/PFD Controls
+      - ref: FJS/Q4XP/Knobs/efis_left_brg1_dn
+      - ref: FJS/Q4XP/Knobs/efis_left_brg1_up
+      - ref: FJS/Q4XP/Knobs/efis_left_brg2_dn
+      - ref: FJS/Q4XP/Knobs/efis_left_brg2_up
+      - ref: FJS/Q4XP/EFIS1/pb_data
+      - ref: FJS/Q4XP/EFIS1/pb_format
+      - ref: FJS/Q4XP/RheoKnobs/lit_pfd_1_brt_dn
+      - ref: FJS/Q4XP/RheoKnobs/lit_pfd_1_brt_up
+      - ref: FJS/Q4XP/Knobs/efis_left_range_dn
+      - ref: FJS/Q4XP/Knobs/efis_left_range_up
+      - ref: FJS/Q4XP/RheoKnobs/lit_mfd_1_brt_dn
+      - ref: FJS/Q4XP/RheoKnobs/lit_mfd_1_brt_up
+      - ref: FJS/Q4XP/RheoKnobs/lit_wxterr_1_brt_dn
+      - ref: FJS/Q4XP/RheoKnobs/lit_wxterr_1_brt_up
+      - ref: #FO MFD/PFD Cont
+      - ref: FJS/Q4XP/Knobs/efis_right_brg1_dn
+      - ref: FJS/Q4XP/Knobs/efis_right_brg1_up
+      - ref: FJS/Q4XP/Knobs/efis_right_brg2_dn
+      - ref: FJS/Q4XP/Knobs/efis_right_brg2_up
+      - ref: FJS/Q4XP/EFIS2/pb_data
+      - ref: FJS/Q4XP/EFIS2/pb_format
+      - ref: FJS/Q4XP/RheoKnobs/lit_pfd_2_brt_dn
+      - ref: FJS/Q4XP/RheoKnobs/lit_pfd_2_brt_up
+      - ref: FJS/Q4XP/Knobs/efis_right_range_dn
+      - ref: FJS/Q4XP/Knobs/efis_right_range_up
+      - ref: FJS/Q4XP/RheoKnobs/lit_mfd_2_brt_dn
+      - ref: FJS/Q4XP/RheoKnobs/lit_mfd_2_brt_up
+      - ref: FJS/Q4XP/RheoKnobs/lit_wxterr_2_brt_dn
+      - ref: FJS/Q4XP/RheoKnobs/lit_wxterr_2_brt_up
+      #
+      # Pedestal
+      #
+      - ref: FJS/Q4XP/FLIGHT_CONTROLS/rudder_trim_left_slow
+      - ref: FJS/Q4XP/FLIGHT_CONTROLS/rudder_trim_left_fast
+      - ref: FJS/Q4XP/FLIGHT_CONTROLS/rudder_trim_right_fast
+      - ref: FJS/Q4XP/FLIGHT_CONTROLS/rudder_trim_right_slow
+      - ref: sim/flight_controls/aileron_trim_left
+      - ref: sim/flight_controls/aileron_trim_right
+      #systems
+      - ref: FJS/Q4XP/RheoKnobs/lit_ed_brt_dn
+      - ref: FJS/Q4XP/RheoKnobs/lit_ed_brt_up
+      - ref: FJS/Q4XP/SoftKey/doors_sys
+      - ref: FJS/Q4XP/SoftKey/all_sys
+      - ref: FJS/Q4XP/SoftKey/fuel_sys
+      - ref: FJS/Q4XP/SoftKey/eng_sys
+      - ref: FJS/Q4XP/SoftKey/elec_sys
+      - ref: FJS/Q4XP/Knobs/mfd_2_selector_dn
+      - ref: FJS/Q4XP/Knobs/mfd_2_selector_up
+      - ref: FJS/Q4XP/Knobs/mfd_1_selector_dn
+      - ref: FJS/Q4XP/Knobs/mfd_1_selector_up
+      - ref: FJS/Q4XP/Knobs/efis_atthdg_src_sel_up
+      - ref: FJS/Q4XP/Knobs/efis_atthdg_src_sel_dn
+      - ref: FJS/Q4XP/Knobs/efis_adc_src_sel_up
+      - ref: FJS/Q4XP/Knobs/efis_adc_src_sel_dn
+      #radar
+      - ref: FJS/Q4XP/SoftKey/wx_rct
+      - ref: FJS/Q4XP/SoftKey/wx_tgt
+      - ref: FJS/Q4XP/SoftKey/wx_stab
+      - ref: FJS/Q4XP/SoftKey/wx_sect
+      - ref: FJS/Q4XP/RheoKnobs/wx_gain_up
+      - ref: FJS/Q4XP/RheoKnobs/wx_gain_dn
+      - ref: FJS/Q4XP/Knobs/wx_mode_up
+      - ref: FJS/Q4XP/Knobs/wx_mode_dn
+      - ref: FJS/Q4XP/Knobs/wx_tilt_up
+      - ref: FJS/Q4XP/Knobs/wx_tilt_dn
+      #Power area
+      - ref: sim/flight_controls/flaps_down
+      - ref: sim/flight_controls/flaps_up
+      - ref: sim/engines/prop_down_2
+      - ref: sim/engines/prop_up_2
+      - ref: sim/engines/prop_down_1
+      - ref: sim/engines/prop_up_1
+      - ref: sim/flight_controls/brakes_toggle_regular
+      - ref: sim/flight_controls/brakes_toggle_max
+      - ref: FJS/Q4XP/FLIGHT_CONTROLS/control_lock
+      - ref: sim/flight_controls/pitch_trim_down
+      - ref: sim/flight_controls/pitch_trim_up
+      #CAPT Speed bugs
+      - ref: FJS/Q4XP/ICP1/Speed_Bug_Knob_Down
+      - ref: FJS/Q4XP/ICP1/Speed_Bug_Knob_Up
+      - ref: sim/instruments/barometer_down
+      - ref: sim/instruments/barometer_up
+      - ref: FJS/Q4XP/Knobs/icp_dh_mda_sel_pilot_dn
+      - ref: FJS/Q4XP/Knobs/icp_dh_mda_sel_pilot_up
+      - ref: FJS/Q4XP/ICP1/HD_MDA_Knob_Down
+      - ref: FJS/Q4XP/ICP1/HD_MDA_Knob_Up
+      - ref: FJS/Q4XP/SoftKey/icp_sel_pilot
+      - ref: FJS/Q4XP/ICP1/Push_to_Std
+      #FO Speed bugs
+      - ref: FJS/Q4XP/ICP2/Speed_Bug_Knob_Down
+      - ref: FJS/Q4XP/ICP2/Speed_Bug_Knob_Up
+      - ref: sim/instruments/barometer_copilot_down
+      - ref: sim/instruments/barometer_copilot_up
+      - ref: FJS/Q4XP/Knobs/icp_dh_mda_sel_copilot_dn
+      - ref: FJS/Q4XP/Knobs/icp_dh_mda_sel_copilot_up
+      - ref: FJS/Q4XP/ICP2/HD_MDA_Knob_Down
+      - ref: FJS/Q4XP/ICP2/HD_MDA_Knob_Up
+      - ref: FJS/Q4XP/SoftKey/icp_sel_copilot
+      - ref: FJS/Q4XP/ICP2/Push_to_Std
+      #ARCDU1
+      - ref: FJS/Q4XP/SoftKey/arcdu_1/skl1
+      - ref: FJS/Q4XP/SoftKey/arcdu_1/skl2
+      - ref: FJS/Q4XP/SoftKey/arcdu_1/skl3
+      - ref: FJS/Q4XP/SoftKey/arcdu_1/skl4
+      - ref: FJS/Q4XP/SoftKey/arcdu_1/skr1
+      - ref: FJS/Q4XP/SoftKey/arcdu_1/skr2
+      - ref: FJS/Q4XP/SoftKey/arcdu_1/skr3
+      - ref: FJS/Q4XP/SoftKey/arcdu_1/skr4
+      - ref: FJS/Q4XP/SoftKey/arcdu_
+      - ref: FJS/Q4XP/Knobs/arcdu_1/mode_up
+      - ref: FJS/Q4XP/Knobs/arcdu_1/mode_dn
+      - ref: FJS/Q4XP/SoftKey/arcdu_1/pg12
+      - ref: FJS/Q4XP/SoftKey/arcdu_1/exp
+      - ref: FJS/Q4XP/SoftKey/arcdu_1/dmehold
+      - ref: FJS/Q4XP/SoftKey/arcdu_1/ch
+      - ref: FJS/Q4XP/SoftKey/arcdu_1/dimrtn
+      - ref: FJS/Q4XP/SoftKey/arcdu_1/prev
+      - ref: FJS/Q4XP/SoftKey/arcdu_1/next
+      - ref: FJS/Q4XP/SoftKey/arcdu_1/maint
+      - ref: FJS/Q4XP/SoftKey/arcdu_1/pa
+      - ref: FJS/Q4XP/SoftKey/arcdu_1/chime
+      - ref: FJS/Q4XP/SoftKey/arcdu_1/call
+      - ref: FJS/Q4XP/SoftKey/arcdu_1/emer
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_VHF1_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_VHF1_up
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_VHF2_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_VHF2_up
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_HF_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_HF_up
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_AUX1_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_AUX1_up
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_AUX2_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_AUX2_up
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_SERVINT_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_SERVINT_up
+      - ref: FJS/Q4XP/Knobs/arcdu_1/mic_sel_up
+      - ref: FJS/Q4XP/Knobs/arcdu_1/mic_sel_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_VOR1_up
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_VOR1_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_VOR2_up
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_VOR2_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_DME1_up
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_DME1_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_DME2_up
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_DME2_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_SPKR_up
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_SPKR_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_MKR_up
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_MKR_dn
+      - ref: FJS/Q4XP/Switches/arcdu_1/norm_emer
+      - ref: FJS/Q4XP/Switches/arcdu_1/boom_mask
+      - ref: FJS/Q4XP/Switches/arcdu_1/hot_mic
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_ADF1_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_ADF1_up
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_ADF2_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_1/audio_ADF2_up
+      #ARCDU2
+      - ref: FJS/Q4XP/SoftKey/arcdu_2/skl1
+      - ref: FJS/Q4XP/SoftKey/arcdu_2/skl2
+      - ref: FJS/Q4XP/SoftKey/arcdu_2/skl3
+      - ref: FJS/Q4XP/SoftKey/arcdu_2/skl4
+      - ref: FJS/Q4XP/SoftKey/arcdu_2/skr1
+      - ref: FJS/Q4XP/SoftKey/arcdu_2/skr2
+      - ref: FJS/Q4XP/SoftKey/arcdu_2/skr3
+      - ref: FJS/Q4XP/SoftKey/arcdu_2/skr4
+      - ref: FJS/Q4XP/SoftKey/arcdu_
+      - ref: FJS/Q4XP/Knobs/arcdu_2/mode_up
+      - ref: FJS/Q4XP/Knobs/arcdu_2/mode_dn
+      - ref: FJS/Q4XP/SoftKey/arcdu_2/pg12
+      - ref: FJS/Q4XP/SoftKey/arcdu_2/exp
+      - ref: FJS/Q4XP/SoftKey/arcdu_2/dmehold
+      - ref: FJS/Q4XP/SoftKey/arcdu_2/ch
+      - ref: FJS/Q4XP/SoftKey/arcdu_2/dimrtn
+      - ref: FJS/Q4XP/SoftKey/arcdu_2/prev
+      - ref: FJS/Q4XP/SoftKey/arcdu_2/next
+      - ref: FJS/Q4XP/SoftKey/arcdu_2/maint
+      - ref: FJS/Q4XP/SoftKey/arcdu_2/pa
+      - ref: FJS/Q4XP/SoftKey/arcdu_2/chime
+      - ref: FJS/Q4XP/SoftKey/arcdu_2/call
+      - ref: FJS/Q4XP/SoftKey/arcdu_2/emer
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_VHF1_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_VHF1_up
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_VHF2_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_VHF2_up
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_HF_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_HF_up
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_AUX1_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_AUX1_up
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_AUX2_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_AUX2_up
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_SERVINT_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_SERVINT_up
+      - ref: FJS/Q4XP/Knobs/arcdu_2/mic_sel_up
+      - ref: FJS/Q4XP/Knobs/arcdu_2/mic_sel_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_VOR1_up
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_VOR1_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_VOR2_up
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_VOR2_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_DME1_up
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_DME1_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_DME2_up
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_DME2_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_SPKR_up
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_SPKR_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_MKR_up
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_MKR_dn
+      - ref: FJS/Q4XP/Switches/arcdu_2/norm_emer
+      - ref: FJS/Q4XP/Switches/arcdu_2/boom_mask
+      - ref: FJS/Q4XP/Switches/arcdu_2/hot_mic
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_ADF1_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_ADF1_up
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_ADF2_dn
+      - ref: FJS/Q4XP/RheoKnobs/arcdu_2/audio_ADF2_up
+      #
+      #Overhead
+      #
+      #DC Control
+      - ref: FJS/Q4XP/Switches/BATTERY_MASTER_toggle
+      - ref: FJS/Q4XP/Switches/MAIN_BATT_toggle
+      - ref: FJS/Q4XP/Switches/AUX_BATT_toggle
+      - ref: FJS/Q4XP/Switches/STBY_BATT_toggle
+      - ref: FJS/Q4XP/Switches/DC_GEN_1_toggle
+      - ref: FJS/Q4XP/Switches/DC_GEN_2_toggle
+      - ref: FJS/Q4XP/Switches/MAIN_BUSTIE_toggle
+      - ref: FJS/Q4XP/Switches/BUS_FAULT_RESET_hold
+      - ref: FJS/Q4XP/Switches/EXT_PWR_toggle
+      #Ice Protection
+      - ref: FJS/Q4XP/Knobs/Airframe_deice_mode_dn
+      - ref: FJS/Q4XP/Knobs/Airframe_deice_mode_up
+      - ref: FJS/Q4XP/Knobs/Airframe_manual_dn
+      - ref: FJS/Q4XP/Knobs/Airframe_manual_up
+      - ref: FJS/Q4XP/Knobs/prop_heat_dn
+      - ref: FJS/Q4XP/Knobs/prop_heat_up
+      - ref: FJS/Q4XP/Button/engine_intake_L
+      - ref: FJS/Q4XP/Button/engine_intake_R
+      - ref: FJS/Q4XP/Switches/REF_SPEEDS
+      - ref: FJS/Q4XP/Switches/BOOT_AIR
+      - ref: FJS/Q4XP/Switches/PITOT_1
+      - ref: FJS/Q4XP/Switches/PITOT_2
+      - ref: FJS/Q4XP/Switches/PITOT_STBY
+      #Windshield
+      - ref: FJS/Q4XP/Knobs/WINDSHIELD_HEAT_dn
+      - ref: FJS/Q4XP/Knobs/WINDSHIELD_HEAT_up
+      - ref: FJS/Q4XP/Knobs/WINDSHIELD_WIPER_dn
+      - ref: FJS/Q4XP/Knobs/WINDSHIELD_WIPER_up
+      - ref: FJS/Q4XP/Switches/PLTSIDEWDOHT
+      #fire
+      - ref: FJS/Q4XP/Guards/EXGT_1
+      - ref: FJS/Q4XP/Button/EXGT_1
+      - ref: FJS/Q4XP/small_Button/apu_fire_test
+      - ref: FJS/Q4XP/Switches/extg_btl_eng1_dn
+      - ref: FJS/Q4XP/Switches/extg_btl_eng1_up
+      - ref: FJS/Q4XP/Switches/extg_btl_eng2_dn
+      - ref: FJS/Q4XP/Switches/extg_btl_eng2_up
+      - ref: FJS/Q4XP/Switches/fireTestDetect_l
+      - ref: FJS/Q4XP/Switches/fireTestDetect_r
+      - ref: FJS/Q4XP/Handles/fireHandle1
+      - ref: FJS/Q4XP/Handles/fireHandle2
+      - ref: FJS/Q4XP/Guards/EXGT_2
+      - ref: FJS/Q4XP/Button/EXGT_2
+      - ref: FJS/Q4XP/Switches/baggFireTest_dn
+      - ref: FJS/Q4XP/Switches/baggFireTest_up
+      - ref: FJS/Q4XP/small_Button/bagg_fire_test
+      - ref: FJS/Q4XP/Guards/EXGT_3
+      - ref: FJS/Q4XP/Button/EXGT_3
+      #Flight Data
+      - ref: FJS/Q4XP/Switches/FLIGHTDATA
+      #PFD Units
+      - ref: FJS/Q4XP/Switches/PFDALTUNITS
+      #Exterior Lights
+      - ref: FJS/Q4XP/Switches/APPR_LIGHTS
+      - ref: FJS/Q4XP/Switches/FLARE_LIGHTS
+      - ref: FJS/Q4XP/Switches/TAXI_LIGHTS
+      - ref: FJS/Q4XP/Switches/WING_INSP_LIGHTS
+      - ref: FJS/Q4XP/Switches/ACOL_dn
+      - ref: FJS/Q4XP/Switches/ACOL_up
+      - ref: FJS/Q4XP/Switches/POSN_LIGHTS
+      - ref: FJS/Q4XP/Switches/LOGO_LIGHTS
+      #Panel Lights
+      - ref: FJS/Q4XP/RheoKnobs/lit_overheadConsole_dn
+      - ref: FJS/Q4XP/RheoKnobs/lit_overheadConsole_up
+      - ref: FJS/Q4XP/RheoKnobs/lit_glareshield_dn
+      - ref: FJS/Q4XP/RheoKnobs/lit_glareshield_up
+      - ref: FJS/Q4XP/RheoKnobs/lit_ctrConFwd_dn
+      - ref: FJS/Q4XP/RheoKnobs/lit_ctrConFwd_up
+      - ref: FJS/Q4XP/RheoKnobs/lit_ctrConAft_dn
+      - ref: FJS/Q4XP/RheoKnobs/lit_ctrConAft_up
+      - ref: FJS/Q4XP/RheoKnobs/lit_ctrConFwd_dn
+      - ref: FJS/Q4XP/Switches/storm_dn
+      - ref: FJS/Q4XP/Switches/storm_up
+      - ref: FJS/Q4XP/Switches/dome
+      # APU
+      - ref: FJS/Q4XP/Button/apu_pwr
+      - ref: FJS/Q4XP/Button/apu_start
+      - ref: FJS/Q4XP/Button/apu_gen
+      - ref: FJS/Q4XP/Button/blair
+      # Engine
+      - ref: FJS/Q4XP/Knobs/ignition_eng1_dn
+      - ref: FJS/Q4XP/Knobs/ignition_eng1_up
+      - ref: FJS/Q4XP/Knobs/ignition_eng2_dn
+      - ref: FJS/Q4XP/Knobs/ignition_eng2_up
+      - ref: FJS/Q4XP/Button/engine_start
+      - ref: FJS/Q4XP/Switches/start_select_l
+      - ref: FJS/Q4XP/Switches/start_select_r
+      #Pressurisation
+      - ref: FJS/Q4XP/RheoKnobs/landing_alt_dn
+      - ref: FJS/Q4XP/RheoKnobs/landing_alt_up
+      - ref: FJS/Q4XP/Switches/manDiff_decr
+      - ref: FJS/Q4XP/Switches/manDiff_incr
+      - ref: FJS/Q4XP/Switches/press_control_up
+      - ref: FJS/Q4XP/Switches/press_control_dn
+      - ref: FJS/Q4XP/RheoKnobs/fwd_outflow_rotary_up
+      - ref: FJS/Q4XP/RheoKnobs/fwd_outflow_rotary_dn
+      #AC Control
+      - ref: FJS/Q4XP/Switches/AC_EXT_POWER
+      - ref: FJS/Q4XP/Switches/AC_GEN_1
+      - ref: FJS/Q4XP/Switches/AC_GEN_2
+      #Air Conditioning
+      - ref: FJS/Q4XP/Switches/recircfan
+      - ref: FJS/Q4XP/Switches/bleed_1
+      - ref: FJS/Q4XP/Switches/bleed_2
+      - ref: FJS/Q4XP/Knobs/bleed_select_dn
+      - ref: FJS/Q4XP/Knobs/bleed_select_up
+      - ref: FJS/Q4XP/Knobs/ducttemp_select_dn
+      - ref: FJS/Q4XP/Knobs/ducttemp_select_up
+      - ref: FJS/Q4XP/Switches/PACK_L_dn
+      - ref: FJS/Q4XP/Switches/PACK_L_up
+      - ref: FJS/Q4XP/Switches/PACK_R_dn
+      - ref: FJS/Q4XP/Switches/PACK_R_up
+      - ref: FJS/Q4XP/RheoKnobs/tempCtrl_fltcomp_up
+      - ref: FJS/Q4XP/RheoKnobs/tempCtrl_fltcomp_dn
+      - ref: FJS/Q4XP/RheoKnobs/tempCtrl_Cabin_dn
+      - ref: FJS/Q4XP/RheoKnobs/tempCtrl_Cabin_up
+      #Lower Right Switches
+      - ref: FJS/Q4XP/Switches/fasten_belts
+      - ref: FJS/Q4XP/Switches/no_smoking
+      - ref: FJS/Q4XP/Switches/cautAdvisory_dn
+      - ref: FJS/Q4XP/Switches/cautAdvisory_up
+      - ref: FJS/Q4XP/Switches/dimbrt_dn
+      - ref: FJS/Q4XP/Switches/dimbrt_up
+      - ref: FJS/Q4XP/Switches/emerlights_dn
+      - ref: FJS/Q4XP/Switches/emerlights_up
+      #
+      #Gear Panel
+      #
+      - ref: FJS/Q4XP/Switches/gear_warn_horn_dn
+      - ref: FJS/Q4XP/Switches/gear_warn_horn_up
+      - ref: sim/flight_controls/landing_gear_down
+      - ref: sim/flight_controls/landing_gear_up
+      - ref: FJS/Q4XP/Button/flap_35_appr
+      - ref: FJS/Q4XP/Knobs/gpws_ldg_flap_selector_dn
+      - ref: FJS/Q4XP/Knobs/gpws_ldg_flap_selector_up
+      - ref: FJS/Q4XP/Button/stby_hyd_press
+      - ref: FJS/Q4XP/Button/ptu_ctrl
+      - ref: FJS/Q4XP/Guards/hyd_3_isoL_vlv
+      - ref: FJS/Q4XP/Button/hyd_3_isoL_vlv
+      #
+      #Fuel
+      #
+      - ref: FJS/Q4XP/Button/tank_1_aux_pump
+      - ref: FJS/Q4XP/Switches/fuel_xfer_l
+      - ref: FJS/Q4XP/Switches/fuel_xfer_r
+      - ref: FJS/Q4XP/Button/tank_2_aux_pump
+      - ref: FJS/Q4XP/Button/mtop
+      - ref: FJS/Q4XP/Button/rdc_np_lndg
+      - ref: FJS/Q4XP/small_Button/event_marker
+      - ref: FJS/Q4XP/small_Button/rdc_top_reset
+      - ref: FJS/Q4XP/small_Button/rdc_top_dec
+      - ref: FJS/Q4XP/Button/mcl
+      - ref: FJS/Q4XP/Button/mcr
+      - ref: FJS/Q4XP/Guards/alt_fthr_1
+      - ref: FJS/Q4XP/Button/alt_fthr_1
+      - ref: FJS/Q4XP/Button/autofeather
+      - ref: FJS/Q4XP/Guards/alt_fthr_2
+      - ref: FJS/Q4XP/Button/alt_fthr_2
+      - ref: FJS/Q4XP/Knobs/stby_com1_mode_dn
+      - ref: FJS/Q4XP/Knobs/stby_com1_mode_up
+      - ref: FJS/Q4XP/Knobs/stby_com1_flip
+      - ref: FJS/Q4XP/COM1STBY/LargeKnob_Incr
+      - ref: FJS/Q4XP/COM1STBY/LargeKnob_Decr
+      - ref: FJS/Q4XP/COM1STBY/SmallKnob_Incr
+      - ref: FJS/Q4XP/COM1STBY/SmallKnob_Decr
+      - ref: FJS/Q4XP/small_Button/cvr_erase
+      - ref: FJS/Q4XP/small_Button/cvr_test
   - name: MAIN CONTINUING
     type: continuing
     assignment: default
     entries:
-      - ref: sim/cockpit2/controls/elevator_trim
-      - ref: sim/cockpit/autopilot/flight_director_pitch
-      - ref: sim/cockpit/autopilot/flight_director_roll
-      - ref: sim/cockpit/autopilot/nav_steer_deg_mag
-      - ref: sim/cockpit/gyros/gyr_spin
-        idx: 2
-      - ref: sim/cockpit/gyros/dg_drift_vac_deg
-      - ref: sim/cockpit/gyros/dg_drift_vac2_deg
-      - ref: sim/cockpit2/autopilot/sync_hold_pitch_deg
-      - ref: sim/cockpit2/autopilot/sync_hold_roll_deg
-      - ref: sim/cockpit/radios/gps_hdef_dot
-      - ref: sim/cockpit/radios/gps_hdef_dot2
-      - ref: sim/cockpit/radios/gps_vdef_dot
-      - ref: sim/cockpit/radios/gps_vdef_dot2
-      - ref: sim/cockpit/radios/gps_dme_dist_m
-      - ref: sim/cockpit/radios/gps_course_degtm
-      - ref: sim/cockpit/radios/gps_course_degtm2
-      - ref: sim/cockpit/radios/gps_slope_degt
+      - ref: sim/cockpit/autopilot/heading_mag
+      - ref: sim/cockpit/autopilot/altitude
+      - ref: sim/cockpit/radios/nav1_obs_degm
+      - ref: sim/cockpit/radios/nav2_obs_degm2
+      - ref: sim/cockpit/misc/barometer_setting
+      - ref: sim/cockpit/misc/barometer_setting2
+      - ref: sim/cockpit/autopilot/airspeed
+      - ref: sim/cockpit/autopilot/vertical_velocity
       - ref: sim/flightmodel/engine/ENGN_FF_
         idx: 0
+      - ref: sim/flightmodel/engine/ENGN_FF_
+        idx: 1
       - ref: sim/flightmodel/engine/ENGN_TRQ
         idx: 0
-      - ref: sim/cockpit/electrical/battery_charge_watt_hr
+      - ref: sim/flightmodel/engine/ENGN_TRQ
+        idx: 1
   - name: MAIN SEND_BACK
     type: continuing
     assignment: send_back
     send_back_idx: 0
     entries:
-      - ref: sim/cockpit2/engine/actuators/mixture_ratio
       - ref: sim/cockpit2/engine/actuators/throttle_ratio
         idx: 0
+      - ref: sim/cockpit2/engine/actuators/throttle_ratio
+        idx: 1
       - ref: sim/flightmodel/engine/ENGN_thro_use
         idx: 0
+      - ref: sim/flightmodel/engine/ENGN_thro_use
+        idx: 1
       - ref: sim/cockpit2/controls/left_brake_ratio
       - ref: sim/cockpit2/controls/right_brake_ratio
       - ref: sim/cockpit2/controls/yoke_heading_ratio
       - ref: sim/cockpit2/controls/yoke_pitch_ratio
       - ref: sim/cockpit2/controls/yoke_roll_ratio
-      - ref: sim/flightmodel2/gear/tire_steer_command_deg
-        idx: 0
-      - ref: sim/flightmodel2/gear/tire_steer_actual_deg
-        idx: 0
   - name: OVERRIDE
     type: override
     send_back_idx: 0
@@ -124,10 +766,10 @@ blocks:
         idx: 0
       - ref: sim/flightmodel/weight/m_fuel
         idx: 1
-      - ref: sim/flightmodel/weight/m_fuel
-        idx: 2
       - ref: sim/flightmodel/misc/cgz_ref_to_default
       - ref: sim/cockpit/autopilot/current_altitude
+      - ref: sim/physics/metric_press
+      - ref: sim/physics/metric_temp
   - name: WEATHER
     type: continuing
     assignment: weather
