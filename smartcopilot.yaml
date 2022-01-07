@@ -1,0 +1,178 @@
+info:
+  author: ZFJW
+  id: FJS Q4XP
+  version: 0.1.2
+setup:
+  slow_time: 5
+  weather_time: 1
+  autopilot: false
+  enhances_smoothness: true
+  disable_smoothness_on_ground: true
+  disable_position_sync: false
+  smoothness_pos_kp: 0.5
+  smoothness_pos_kd: 2
+  smoothness_att_kp: 140
+  smoothness_att_kd: 9
+blocks:
+  - name: MAIN TRIGGERS
+    type: trigger
+    entries:
+      #- ref: sim/physics/metric_press
+      #- ref: sim/cockpit2/fuel/fuel_tank_pump_on
+      #  idx: 0
+      
+  - name: FAILURES
+    option: Failures
+    type: trigger
+    entries:
+      #- ref: sim/flightmodel/failures/aoa_ice
+  - name: TRANSPONDER DR
+    type: trigger
+    option: Transponder
+    entries:
+      - ref: sim/cockpit/radios/transponder_mode
+  - name: RADIO DR
+    type: trigger
+    option: Radio
+    entries:
+      #- ref: sim/cockpit2/radios/actuators/audio_com_selection
+  - name: MAIN COMMANDS
+    type: command
+    entries:
+      #- ref: sim/GPS/g430n1_cdi
+  - name: MAIN CONTINUING
+    type: continuing
+    assignment: default
+    entries:
+      - ref: sim/cockpit2/controls/elevator_trim
+      - ref: sim/cockpit/autopilot/flight_director_pitch
+      - ref: sim/cockpit/autopilot/flight_director_roll
+      - ref: sim/cockpit/autopilot/nav_steer_deg_mag
+      - ref: sim/cockpit/gyros/gyr_spin
+        idx: 2
+      - ref: sim/cockpit/gyros/dg_drift_vac_deg
+      - ref: sim/cockpit/gyros/dg_drift_vac2_deg
+      - ref: sim/cockpit2/autopilot/sync_hold_pitch_deg
+      - ref: sim/cockpit2/autopilot/sync_hold_roll_deg
+      - ref: sim/cockpit/radios/gps_hdef_dot
+      - ref: sim/cockpit/radios/gps_hdef_dot2
+      - ref: sim/cockpit/radios/gps_vdef_dot
+      - ref: sim/cockpit/radios/gps_vdef_dot2
+      - ref: sim/cockpit/radios/gps_dme_dist_m
+      - ref: sim/cockpit/radios/gps_course_degtm
+      - ref: sim/cockpit/radios/gps_course_degtm2
+      - ref: sim/cockpit/radios/gps_slope_degt
+      - ref: sim/flightmodel/engine/ENGN_FF_
+        idx: 0
+      - ref: sim/flightmodel/engine/ENGN_TRQ
+        idx: 0
+      - ref: sim/cockpit/electrical/battery_charge_watt_hr
+  - name: MAIN SEND_BACK
+    type: continuing
+    assignment: send_back
+    send_back_idx: 0
+    entries:
+      - ref: sim/cockpit2/engine/actuators/mixture_ratio
+      - ref: sim/cockpit2/engine/actuators/throttle_ratio
+        idx: 0
+      - ref: sim/flightmodel/engine/ENGN_thro_use
+        idx: 0
+      - ref: sim/cockpit2/controls/left_brake_ratio
+      - ref: sim/cockpit2/controls/right_brake_ratio
+      - ref: sim/cockpit2/controls/yoke_heading_ratio
+      - ref: sim/cockpit2/controls/yoke_pitch_ratio
+      - ref: sim/cockpit2/controls/yoke_roll_ratio
+      - ref: sim/flightmodel2/gear/tire_steer_command_deg
+        idx: 0
+      - ref: sim/flightmodel2/gear/tire_steer_actual_deg
+        idx: 0
+  - name: OVERRIDE
+    type: override
+    send_back_idx: 0
+    entries:
+      - ref: sim/operation/override/override_joystick_heading
+        flag: 10
+      - ref: sim/operation/override/override_joystick_pitch
+        flag: 10
+      - ref: sim/operation/override/override_joystick_roll
+        flag: 10
+      - ref: sim/operation/override/override_throttles
+        flag: 10
+      - ref: sim/operation/override/override_mixture
+        flag: 10
+      - ref: sim/operation/override/override_wheel_steer
+        flag: 10
+      - ref: sim/operation/override/override_fuel_flow
+        flag: 12
+      - ref: sim/operation/override/override_flightdir
+        flag: 12
+      - ref: sim/operation/override/override_toe_brakes
+        flag: 10
+  - name: SLOW
+    type: continuing
+    assignment: slow
+    entries:
+      - ref: sim/time/hobbs_time
+      - ref: sim/time/total_flight_time_sec
+      - ref: sim/time/total_running_time_sec
+      - ref: sim/time/zulu_time_sec
+      - ref: sim/time/use_system_time
+      - ref: sim/time/local_date_days
+      - ref: sim/flightmodel/weight/m_fixed
+      - ref: sim/flightmodel/weight/m_fuel_total
+      - ref: sim/flightmodel/weight/m_fuel
+        idx: 0
+      - ref: sim/flightmodel/weight/m_fuel
+        idx: 1
+      - ref: sim/flightmodel/weight/m_fuel
+        idx: 2
+      - ref: sim/flightmodel/misc/cgz_ref_to_default
+      - ref: sim/cockpit/autopilot/current_altitude
+  - name: WEATHER
+    type: continuing
+    assignment: weather
+    entries:
+      - ref: sim/weather/shear_direction_degt[0]
+      - ref: sim/weather/shear_direction_degt[1]
+      - ref: sim/weather/shear_direction_degt[2]
+      - ref: sim/weather/shear_speed_kt[0]
+      - ref: sim/weather/shear_speed_kt[1]
+      - ref: sim/weather/shear_speed_kt[2]
+      - ref: sim/weather/wind_altitude_msl_m[0]
+      - ref: sim/weather/wind_altitude_msl_m[1]
+      - ref: sim/weather/wind_altitude_msl_m[2]
+      - ref: sim/weather/wind_direction_degt[0]
+      - ref: sim/weather/wind_direction_degt[1]
+      - ref: sim/weather/wind_direction_degt[2]
+      - ref: sim/weather/wind_speed_kt[0]
+      - ref: sim/weather/wind_speed_kt[1]
+      - ref: sim/weather/wind_speed_kt[2]
+      - ref: sim/weather/turbulence[0]
+      - ref: sim/weather/turbulence[1]
+      - ref: sim/weather/turbulence[2]
+      - ref: sim/weather/barometer_sealevel_inhg
+      - ref: sim/weather/cloud_base_msl_m[0]
+      - ref: sim/weather/cloud_base_msl_m[1]
+      - ref: sim/weather/cloud_base_msl_m[2]
+      - ref: sim/weather/cloud_coverage[0]
+      - ref: sim/weather/cloud_coverage[1]
+      - ref: sim/weather/cloud_coverage[2]
+      - ref: sim/weather/cloud_tops_msl_m[0]
+      - ref: sim/weather/cloud_tops_msl_m[1]
+      - ref: sim/weather/cloud_tops_msl_m[2]
+      - ref: sim/weather/rain_percent
+      - ref: sim/weather/runway_friction
+      - ref: sim/weather/runway_is_patchy
+      - ref: sim/weather/temperature_sealevel_c
+      - ref: sim/weather/temperature_tropo_c
+      - ref: sim/weather/tropo_alt_mtr
+      - ref: sim/weather/thermal_altitude_msl_m
+      - ref: sim/weather/thermal_percent
+      - ref: sim/weather/thermal_rate_ms
+      - ref: sim/weather/thunderstorm_percent
+      - ref: sim/weather/visibility_reported_m
+      - ref: sim/weather/wave_amplitude
+      - ref: sim/weather/wave_dir
+      - ref: sim/weather/wave_length
+      - ref: sim/weather/wave_speed
+      - ref: sim/weather/wind_turbulence_percent
