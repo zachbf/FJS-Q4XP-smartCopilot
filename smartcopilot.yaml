@@ -21,7 +21,14 @@ blocks:
       - ref: FJS/Q4XP/Manips/Pitch_Disengage_Ctl
       - ref: FJS/Q4XP/Ext/show_gpu
       - ref: FJS/Q4XP/Manips/CockpitDoor_Ctl
-      
+      - ref: FJS/Q4XP/Manips/FMS_1_Softkey_Anim
+        idx: 0
+      - ref: FJS/Q4XP/Manips/FMS_1_Softkey_Anim
+        idx: 60
+      - ref: FJS/Q4XP/Manips/FMS_1_Softkey_Ctl
+        idx: 0
+      - ref: FJS/Q4XP/Manips/FMS_1_Softkey_Ctl
+        idx: 60
   - name: FAILURES
     option: Failures
     type: trigger
@@ -75,7 +82,7 @@ blocks:
     entries:
       #FMS1
       - ref: FJS/Q4XP/fms1/data
-      - ref: FJS/Q4XP/fms1/dt
+      - ref: FJS/Q4XP/fms1/dto
       - ref: FJS/Q4XP/fms1/fpl
       - ref: FJS/Q4XP/fms1/fuel
       - ref: FJS/Q4XP/fms1/menu
@@ -139,7 +146,7 @@ blocks:
       - ref: FJS/Q4XP/fms1/lsk_r5
       #FMS2
       - ref: FJS/Q4XP/fms2/data
-      - ref: FJS/Q4XP/fms2/dt
+      - ref: FJS/Q4XP/fms2/dto
       - ref: FJS/Q4XP/fms2/fpl
       - ref: FJS/Q4XP/fms2/fuel
       - ref: FJS/Q4XP/fms2/menu
@@ -335,9 +342,7 @@ blocks:
       - ref: FJS/Q4XP/RheoKnobs/lit_mfd_2_brt_up
       - ref: FJS/Q4XP/RheoKnobs/lit_wxterr_2_brt_dn
       - ref: FJS/Q4XP/RheoKnobs/lit_wxterr_2_brt_up
-      #
       # Pedestal
-      #
       - ref: FJS/Q4XP/FLIGHT_CONTROLS/rudder_trim_left_slow
       - ref: FJS/Q4XP/FLIGHT_CONTROLS/rudder_trim_left_fast
       - ref: FJS/Q4XP/FLIGHT_CONTROLS/rudder_trim_right_fast
@@ -414,7 +419,7 @@ blocks:
       - ref: FJS/Q4XP/SoftKey/arcdu_1/skr2
       - ref: FJS/Q4XP/SoftKey/arcdu_1/skr3
       - ref: FJS/Q4XP/SoftKey/arcdu_1/skr4
-      - ref: FJS/Q4XP/SoftKey/arcdu_
+      - ref: FJS/Q4XP/SoftKey/arcdu_1/id
       - ref: FJS/Q4XP/Knobs/arcdu_1/mode_up
       - ref: FJS/Q4XP/Knobs/arcdu_1/mode_dn
       - ref: FJS/Q4XP/SoftKey/arcdu_1/pg12
@@ -471,7 +476,7 @@ blocks:
       - ref: FJS/Q4XP/SoftKey/arcdu_2/skr2
       - ref: FJS/Q4XP/SoftKey/arcdu_2/skr3
       - ref: FJS/Q4XP/SoftKey/arcdu_2/skr4
-      - ref: FJS/Q4XP/SoftKey/arcdu_
+      - ref: FJS/Q4XP/SoftKey/arcdu_1/id
       - ref: FJS/Q4XP/Knobs/arcdu_2/mode_up
       - ref: FJS/Q4XP/Knobs/arcdu_2/mode_dn
       - ref: FJS/Q4XP/SoftKey/arcdu_2/pg12
@@ -601,7 +606,7 @@ blocks:
       - ref: FJS/Q4XP/Button/apu_pwr
       - ref: FJS/Q4XP/Button/apu_start
       - ref: FJS/Q4XP/Button/apu_gen
-      - ref: FJS/Q4XP/Button/blair
+      - ref: FJS/Q4XP/Button/apu_blair
       # Engine
       - ref: FJS/Q4XP/Knobs/ignition_eng1_dn
       - ref: FJS/Q4XP/Knobs/ignition_eng1_up
@@ -719,9 +724,13 @@ blocks:
         idx: 0
       - ref: sim/cockpit2/engine/actuators/throttle_ratio
         idx: 1
-      - ref: sim/flightmodel/engine/ENGN_thro_use
+      - ref: sim/flightmodel/engine/ENGN_thro
         idx: 0
-      - ref: sim/flightmodel/engine/ENGN_thro_use
+      - ref: sim/flightmodel/engine/ENGN_thro
+        idx: 1
+      - ref: FJS/Q4XP/Manips/PowerHandles_Ctl
+        idx: 0
+      - ref: FJS/Q4XP/Manips/PowerHandles_Ctl
         idx: 1
       - ref: sim/cockpit2/controls/left_brake_ratio
       - ref: sim/cockpit2/controls/right_brake_ratio
@@ -732,6 +741,8 @@ blocks:
     type: override
     send_back_idx: 0
     entries:
+      - ref: sim/operation/override/override_joystick
+        flag: 10
       - ref: sim/operation/override/override_joystick_heading
         flag: 10
       - ref: sim/operation/override/override_joystick_pitch
