@@ -19,21 +19,12 @@ blocks:
     entries:
       - ref: FJS/Q4XP/Manips/Roll_Disengage_Ctl
       - ref: FJS/Q4XP/Manips/Pitch_Disengage_Ctl
-      - ref: FJS/Q4XP/Ext/show_gpu
       - ref: FJS/Q4XP/Manips/CockpitDoor_Ctl
-      - ref: FJS/Q4XP/Manips/FMS_1_Softkey_Anim
-        idx: 0
-      - ref: FJS/Q4XP/Manips/FMS_1_Softkey_Anim
-        idx: 60
-      - ref: FJS/Q4XP/Manips/FMS_1_Softkey_Ctl
-        idx: 0
-      - ref: FJS/Q4XP/Manips/FMS_1_Softkey_Ctl
-        idx: 60
   - name: FAILURES
     option: Failures
     type: trigger
     entries:
-      #- ref: somethiong
+      #- ref: something in the future
   - name: TRANSPONDER DR
     type: trigger
     option: Transponder
@@ -379,15 +370,20 @@ blocks:
       #Power area
       - ref: sim/flight_controls/flaps_down
       - ref: sim/flight_controls/flaps_up
+      - ref: sim/engines/prop_down
+      - ref: sim/engines/prop_up
       - ref: sim/engines/prop_down_2
       - ref: sim/engines/prop_up_2
       - ref: sim/engines/prop_down_1
       - ref: sim/engines/prop_up_1
+      - ref: sim/engines/throttle_up
+      - ref: sim/engines/throttle_down
       - ref: sim/flight_controls/brakes_toggle_regular
       - ref: sim/flight_controls/brakes_toggle_max
       - ref: FJS/Q4XP/FLIGHT_CONTROLS/control_lock
       - ref: sim/flight_controls/pitch_trim_down
       - ref: sim/flight_controls/pitch_trim_up
+      - ref: sim/autopilot/take-off_go-around
       #CAPT Speed bugs
       - ref: FJS/Q4XP/ICP1/Speed_Bug_Knob_Down
       - ref: FJS/Q4XP/ICP1/Speed_Bug_Knob_Up
@@ -695,6 +691,11 @@ blocks:
       - ref: FJS/Q4XP/COM1STBY/SmallKnob_Decr
       - ref: FJS/Q4XP/small_Button/cvr_erase
       - ref: FJS/Q4XP/small_Button/cvr_test
+      ## BP
+      - ref: BetterPushback/start
+      - ref: BetterPushback/connect_first
+      - ref: BetterPushback/disconnect
+      - ref: BetterPushback/reconnect
   - name: MAIN CONTINUING
     type: continuing
     assignment: default
@@ -711,10 +712,26 @@ blocks:
         idx: 0
       - ref: sim/flightmodel/engine/ENGN_FF_
         idx: 1
-      - ref: sim/flightmodel/engine/ENGN_TRQ
+      - ref: sim/cockpit2/engine/indicators/torque_n_mtr
         idx: 0
-      - ref: sim/flightmodel/engine/ENGN_TRQ
+      - ref: sim/cockpit2/engine/indicators/torque_n_mtr
         idx: 1
+      - ref: sim/flightmodel2/engines/ITT_deg_C
+        idx: 0
+      - ref: sim/flightmodel2/engines/ITT_deg_C
+        idx: 1 
+      - ref: sim/cockpit2/engine/indicators/prop_speed_rpm
+        idx: 0
+      - ref: sim/cockpit2/engine/indicators/prop_speed_rpm
+        idx: 1 
+      - ref: sim/cockpit2/engine/indicators/oil_temperature_deg_C
+        idx: 0
+      - ref: sim/cockpit2/engine/indicators/oil_temperature_deg_C
+        idx: 1 
+      - ref: sim/cockpit2/engine/indicators/fuel_flow_kg_sec
+        idx: 0
+      - ref: sim/cockpit2/engine/indicators/fuel_flow_kg_sec
+        idx: 1 
   - name: MAIN SEND_BACK
     type: continuing
     assignment: send_back
@@ -724,6 +741,7 @@ blocks:
         idx: 0
       - ref: sim/cockpit2/engine/actuators/throttle_ratio
         idx: 1
+      - ref: sim/cockpit2/engine/actuators/throttle_ratio_all
       - ref: sim/flightmodel/engine/ENGN_thro
         idx: 0
       - ref: sim/flightmodel/engine/ENGN_thro
@@ -732,6 +750,8 @@ blocks:
         idx: 0
       - ref: FJS/Q4XP/Manips/PowerHandles_Ctl
         idx: 1
+      - ref: FJS/Q4XP/FlightControls/PowerHandle_1
+      - ref: FJS/Q4XP/FlightControls/PowerHandle_2
       - ref: sim/cockpit2/controls/left_brake_ratio
       - ref: sim/cockpit2/controls/right_brake_ratio
       - ref: sim/cockpit2/controls/yoke_heading_ratio
@@ -751,8 +771,7 @@ blocks:
         flag: 10
       - ref: sim/operation/override/override_throttles
         flag: 10
-      - ref: sim/operation/override/override_mixture
-        flag: 10
+        axes: [4, 20, 21, 22, 23]
       - ref: sim/operation/override/override_wheel_steer
         flag: 10
       - ref: sim/operation/override/override_fuel_flow
