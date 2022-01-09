@@ -740,6 +740,10 @@ blocks:
       - ref: sim/cockpit2/controls/yoke_heading_ratio
       - ref: sim/cockpit2/controls/yoke_pitch_ratio
       - ref: sim/cockpit2/controls/yoke_roll_ratio
+      - ref: FJS/Q4XP/PlgnXfr/ADC_IAS
+      - ref: FJS/Q4XP/PlgnXfr/ADC_Altitude
+      - ref: FJS/Q4XP/PlgnXfr/ADC_TAS
+      - ref: FJS/Q4XP/PlgnXfr/ADC_Static_Air_Temp
       - ref: FJS/Q4XP/Manips/PowerHandles_Ctl
         idx: 0
       - ref: FJS/Q4XP/Manips/PowerHandles_Ctl
