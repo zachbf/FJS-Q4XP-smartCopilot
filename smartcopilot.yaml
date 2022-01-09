@@ -221,6 +221,8 @@ blocks:
       - ref: FJS/Q4XP/Switches/prop_os_gov_test
       - ref: FJS/Q4XP/Guards/pitot_static_iso_vlv
       - ref: FJS/Q4XP/Guards/pitot_static_iso_vlv
+      - ref: FJS/Q4XP/Guards/gpws_flap_override
+      - ref: FJS/Q4XP/Button/gpws_flap_override
       #CPT Clock
       - ref: FJS/Q4XP/SoftKey/clock_chr_pilot
       - ref: FJS/Q4XP/SoftKey/clock_et_pilot
@@ -654,6 +656,7 @@ blocks:
       #
       - ref: FJS/Q4XP/Switches/gear_warn_horn_dn
       - ref: FJS/Q4XP/Switches/gear_warn_horn_up
+      - ref: sim/flight_controls/landing_gear_toggle
       - ref: sim/flight_controls/landing_gear_down
       - ref: sim/flight_controls/landing_gear_up
       - ref: FJS/Q4XP/Button/flap_35_appr
@@ -696,6 +699,7 @@ blocks:
       - ref: BetterPushback/connect_first
       - ref: BetterPushback/disconnect
       - ref: BetterPushback/reconnect
+
   - name: MAIN CONTINUING
     type: continuing
     assignment: default
@@ -708,48 +712,27 @@ blocks:
       - ref: sim/cockpit/misc/barometer_setting2
       - ref: sim/cockpit/autopilot/airspeed
       - ref: sim/cockpit/autopilot/vertical_velocity
+      - ref: sim/flightmodel2/engines/prop_rotation_speed_rad_sec
+        idx: 0
+      - ref: sim/flightmodel2/engines/prop_rotation_speed_rad_sec
+        idx: 1
       - ref: sim/flightmodel/engine/ENGN_FF_
         idx: 0
       - ref: sim/flightmodel/engine/ENGN_FF_
         idx: 1
-      - ref: sim/cockpit2/engine/indicators/torque_n_mtr
+      - ref: sim/flightmodel/engine/ENGN_TRQ
         idx: 0
-      - ref: sim/cockpit2/engine/indicators/torque_n_mtr
+      - ref: sim/flightmodel/engine/ENGN_TRQ
         idx: 1
       - ref: sim/flightmodel2/engines/ITT_deg_C
         idx: 0
       - ref: sim/flightmodel2/engines/ITT_deg_C
-        idx: 1 
-      - ref: sim/cockpit2/engine/indicators/prop_speed_rpm
-        idx: 0
-      - ref: sim/cockpit2/engine/indicators/prop_speed_rpm
-        idx: 1 
-      - ref: sim/cockpit2/engine/indicators/oil_temperature_deg_C
-        idx: 0
-      - ref: sim/cockpit2/engine/indicators/oil_temperature_deg_C
-        idx: 1 
-      - ref: sim/cockpit2/engine/indicators/fuel_flow_kg_sec
-        idx: 0
-      - ref: sim/cockpit2/engine/indicators/fuel_flow_kg_sec
         idx: 1 
   - name: MAIN SEND_BACK
     type: continuing
     assignment: send_back
     send_back_idx: 0
     entries:
-      - ref: sim/cockpit2/engine/actuators/throttle_ratio
-        idx: 0
-      - ref: sim/cockpit2/engine/actuators/throttle_ratio
-        idx: 1
-      - ref: sim/cockpit2/engine/actuators/throttle_ratio_all
-      - ref: sim/flightmodel/engine/ENGN_thro
-        idx: 0
-      - ref: sim/flightmodel/engine/ENGN_thro
-        idx: 1
-      - ref: FJS/Q4XP/Manips/PowerHandles_Ctl
-        idx: 0
-      - ref: FJS/Q4XP/Manips/PowerHandles_Ctl
-        idx: 1
       - ref: FJS/Q4XP/FlightControls/PowerHandle_1
       - ref: FJS/Q4XP/FlightControls/PowerHandle_2
       - ref: sim/cockpit2/controls/left_brake_ratio
@@ -757,6 +740,22 @@ blocks:
       - ref: sim/cockpit2/controls/yoke_heading_ratio
       - ref: sim/cockpit2/controls/yoke_pitch_ratio
       - ref: sim/cockpit2/controls/yoke_roll_ratio
+      - ref: FJS/Q4XP/Manips/PowerHandles_Ctl
+        idx: 0
+      - ref: FJS/Q4XP/Manips/PowerHandles_Ctl
+        idx: 1
+      - ref: sim/cockpit2/engine/actuators/throttle_ratio
+        idx: 0
+      - ref: sim/cockpit2/engine/actuators/throttle_ratio
+        idx: 1
+      - ref: sim/flightmodel/engine/ENGN_thro
+        idx: 0
+      - ref: sim/flightmodel/engine/ENGN_thro
+        idx: 1
+      - ref: sim/cockpit2/engine/actuators/prop_rotation_speed_rad_sec
+        idx: 0
+      - ref: sim/cockpit2/engine/actuators/prop_rotation_speed_rad_sec
+        idx: 1 
   - name: OVERRIDE
     type: override
     send_back_idx: 0
@@ -769,9 +768,9 @@ blocks:
         flag: 10
       - ref: sim/operation/override/override_joystick_roll
         flag: 10
-      - ref: sim/operation/override/override_throttles
-        flag: 10
-        axes: [4, 20, 21, 22, 23]
+      #- ref: sim/operation/override/override_throttles
+      #  flag: 10
+      #  axes: [4, 20, 21, 22, 23]
       - ref: sim/operation/override/override_wheel_steer
         flag: 10
       - ref: sim/operation/override/override_fuel_flow
@@ -792,6 +791,7 @@ blocks:
       - ref: sim/time/local_date_days
       - ref: sim/flightmodel/weight/m_fixed
       - ref: sim/flightmodel/weight/m_fuel_total
+      - ref: sim/flightmodel/weight/m_total
       - ref: sim/flightmodel/weight/m_fuel
         idx: 0
       - ref: sim/flightmodel/weight/m_fuel
