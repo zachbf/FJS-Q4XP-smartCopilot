@@ -6,8 +6,10 @@ A WIP config file for [smartCopilot v4](https://sky4crew.com/smartcopilot) and t
 - Ensure standby radio frequencies are matched (or simply set to 118.0 for VHF, 100 for ADF, transponder set to 2000).
 
 ### Known Issues
-- Pitot static isolation valve does not work.
 - Throttles can only be controlled with throttle up and throttle down keys (F1, F2).
 
-### Data that cannot be shared due to A/C limitations
+### Dataref limitations
+- Pitot static isolation valve does not work.
 - Standby radio frequencies cannot be shared.
+- Main door inconsistent sync.
+- GPU does not sync.
